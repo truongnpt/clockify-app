@@ -12,6 +12,7 @@ import styled from 'styles/styled-components';
 import { Switch, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 
+import Login from 'containers/Login/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -21,7 +22,6 @@ import Footer from 'components/Footer';
 import GlobalStyle from '../../global-styles';
 
 const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
   margin: 0 auto;
   display: flex;
   min-height: 100%;
@@ -34,17 +34,18 @@ function App() {
     <AppWrapper>
       <Helmet
         titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        defaultTitle="Clockify"
       >
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
-      <Header />
+      {/* <Header /> */}
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/login" component={Login} />
         <Route path="/features" component={FeaturePage} />
         <Route component={NotFoundPage} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
       <GlobalStyle />
     </AppWrapper>
   );
