@@ -1,0 +1,261 @@
+.bg-gray {
+  background-color: #c4c4c4;
+}
+
+form {
+  label {
+    text-transform: uppercase;
+  }
+}
+
+.page-wrapper {
+  min-height: 100vh;
+}
+
+.w-49 {
+  width: 49%;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.text-break {
+  white-space: break-spaces;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+  :hover {
+    text-decoration: underline !important;
+  }
+}
+
+.custom-control-label {
+  font-family: 'DM Sans';
+}
+
+.react-datepicker-popper {
+  z-index: 9 !important;
+}
+
+textarea {
+  resize: none;
+}
+
+// toasify
+.Toastify .Toastify__toast-container {
+  max-width: 400px !important;
+}
+
+.Toastify__toast-container {
+  width: auto;
+}
+
+.Toastify__toast {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0px 0px 10px 2px rgba(21, 21, 21, 0.08);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.Toastify__toast--default {
+  width: 400px;
+  align-items: flex-start;
+  color: #419958;
+}
+
+.Toastify__toast--error {
+  background: #dc1818;
+}
+
+.Toastify__toast--error > .Toastify__close-button,
+.Toastify__toast--success > .Toastify__close-button {
+  color: #fdfeff;
+}
+
+.Toastify__close-button {
+  color: #419958;
+  opacity: 1;
+}
+.toast-error {
+  background: #dc1818;
+  color: #fdfeff;
+}
+
+.toast-error .Toastify__close-button {
+  color: #fdfeff;
+}
+
+.toast-warning {
+  background: #ffb133;
+}
+
+// date picker time event modal
+.react-datepicker--time-only {
+  width: 14.5rem;
+}
+
+.react-datepicker--time-only ::-webkit-scrollbar {
+  width: 0px;
+}
+
+.react-datepicker--time-only .react-datepicker__time-container {
+  width: 14.5rem;
+  display: flex;
+}
+
+.react-datepicker--time-only .react-datepicker__time-box {
+  width: 100% !important;
+}
+
+.react-datepicker__triangle,
+.react-datepicker--time-only .react-datepicker__header {
+  display: none;
+}
+
+.react-datepicker--time-only .react-datepicker__time {
+  width: 100%;
+}
+
+.react-datepicker--time-only .react-datepicker__time-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.react-datepicker--time-only .react-datepicker__time-list-item {
+  width: 100%;
+  text-align: start;
+  font-size: 14px;
+  font-family: 'DM Sans';
+  font-weight: 400;
+}
+
+.react-datepicker__time-container .react-datepicker__time {
+  background: none !important;
+  border: 0 !important;
+}
+
+// date picker calendar
+.react-datepicker {
+  border: 1px solid #f5f6f8 !important;
+  box-shadow: 0px 0px 10px 2px rgba(21, 21, 21, 0.08) !important;
+  border-radius: 5px !important;
+  padding: 10px 0;
+}
+
+.react-datepicker__day-name {
+  color: #626262 !important;
+  font-weight: 700;
+}
+
+.react-datepicker__month-container {
+  width: 17rem;
+}
+
+.react-datepicker__header {
+  background: #fff !important;
+  border: 0 !important;
+}
+
+.react-datepicker__day {
+  color: #419958;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.react-datepicker__day--outside-month {
+  color: #626262;
+  font-weight: 400;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background: #405781 !important;
+}
+
+.react-datepicker-popper[data-placement^='bottom'] {
+  margin-top: -10px !important;
+}
+
+// toggle
+.toggle-small.react-toggle--checked .react-toggle-track {
+  background: #23804d;
+}
+
+.toggle-small.react-toggle--checked .react-toggle-thumb {
+  left: 18px !important;
+}
+
+.react-toggle--focus .react-toggle-thumb {
+  box-shadow: none !important;
+}
+
+// drag&drop
+.css-i7m8i5 {
+  cursor: pointer !important;
+}
+
+.mw-form-field {
+  max-width: 300px;
+}
+
+#fc_frame{
+  left: 50px !important;
+  z-index: 1080 !important;
+}
+
+#fc_frame.rtl-fc_frame {
+  left: initial !important;
+  right: 50px !important;
+}
+
+
+%rtl-theme {
+  margin-right: calc(200px + 30px);
+  margin-left: initial !important;
+}
+
+.rtl-theme-page-content {
+  @extend %rtl-theme;
+}
+
+.rtl-theme-header {
+  @extend %rtl-theme;
+}
+
+.tags-custom--focus {
+  border-color: #D4D4D4 !important;
+}
+
+.react-tagsinput-tag-custom {
+  background-color: #fff !important;
+  border: 1px solid #ededed !important;
+  color: rgb(33, 37, 41) !important;
+  font-family: "DM Sans", sans-serif !important;
+}
+
+.react-tagsinput-input-custom {
+  width: 100% !important;
+}
+
+.email-notification-custom-label label {
+  text-transform: initial !important;
+}
+
+.action-disabled {
+  color: gray;
+  cursor: no-drop;
+}
