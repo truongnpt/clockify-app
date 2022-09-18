@@ -1,0 +1,28 @@
+<svg width="325" height="220" viewBox="0 0 325 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="325" height="220" fill="#F5F6F8"/>
+<path opacity="0.2" d="M17 29C17 26.2386 19.2386 24 22 24H303C305.761 24 308 26.2386 308 29V171H17V29Z" fill="#405781"/>
+<path opacity="0.4" d="M17 191C17 193.761 19.2386 196 22 196H303C305.761 196 308 193.761 308 191V171H17V191Z" fill="#405781"/>
+<mask id="mask0_2047:20378" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="37" y="42" width="102" height="112">
+<rect x="37" y="42" width="102" height="112" rx="5" fill="white"/>
+</mask>
+<g mask="url(#mask0_2047:20378)">
+<rect x="37" y="42" width="102" height="112" rx="5" fill="white"/>
+<path d="M62.5 78.3421C62.5 92.3141 73.941 103.684 88 103.684C102.059 103.684 113.5 92.3141 113.5 78.3421C113.5 64.3702 102.059 53 88 53C73.941 53 62.5 64.3702 62.5 78.3421ZM133.333 160H139V154.368C139 132.636 121.201 114.947 99.3333 114.947H76.6667C54.7933 114.947 37 132.636 37 154.368V160H133.333Z" fill="#ADB6C8"/>
+</g>
+<rect x="162" y="65" width="39" height="6" rx="3" fill="white"/>
+<rect x="162" y="104" width="46" height="4" rx="2" fill="white"/>
+<rect x="162" y="126" width="37" height="4" rx="2" fill="white"/>
+<rect x="204" y="126" width="12" height="4" rx="2" fill="white"/>
+<rect x="221" y="126" width="35" height="4" rx="2" fill="white"/>
+<rect x="261" y="126" width="21" height="4" rx="2" fill="white"/>
+<rect x="213" y="104" width="46" height="4" rx="2" fill="white"/>
+<rect x="162" y="93" width="13" height="4" rx="2" fill="white"/>
+<rect x="263" y="104" width="13" height="4" rx="2" fill="white"/>
+<rect x="206" y="65" width="39" height="6" rx="3" fill="white"/>
+<rect x="180" y="93" width="34" height="4" rx="2" fill="white"/>
+<rect x="219" y="93" width="23" height="4" rx="2" fill="white"/>
+<rect x="162" y="115" width="23" height="4" rx="2" fill="white"/>
+<rect x="190" y="115" width="32" height="4" rx="2" fill="white"/>
+<rect x="227" y="115" width="23" height="4" rx="2" fill="white"/>
+<rect x="247" y="93" width="23" height="4" rx="2" fill="white"/>
+</svg>
