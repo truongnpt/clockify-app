@@ -2,7 +2,8 @@ import { ThemeSettingProps } from 'types/theme';
 const theme: ThemeSettingProps = {
   colors: {
     primaryGreen: '#57bb71',
-    primaryBlack: '#419958',
+    primaryGreenHover: '#419958',
+    primaryBlack: '#000000',
     primaryWhite: '#FDFEFF',
     silver: '#D4D4D4',
     white: '#FFFFFF',

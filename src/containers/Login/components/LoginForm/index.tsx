@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FormikProps, withFormik } from 'formik';
 import {
   FormGroup,
@@ -13,11 +13,9 @@ import {
   FlexFormGroup,
   FormFieldError,
   Button,
-  P,
-  Link,
 } from 'components';
 import * as Yup from 'yup';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import theme from 'styles/theme';
 
 interface FormValues {
@@ -32,18 +30,9 @@ interface LoginInnerFormProps {
 
 interface Props {}
 
-const siteKey = process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY;
-
 function LoginInnerForm(props: LoginInnerFormProps & FormikProps<FormValues>) {
 
   const { setFieldValue, handleSubmit } = props;
-
-  const [reCaptchaInstance, setReCaptchaInstance] = useState<any>(null);
-
-  const verifyCallback = response => {
-    setFieldValue('recaptcha_token', response);
-    handleSubmit();
-  };
 
   return (
     <div>
@@ -128,7 +117,6 @@ const LoginFormFormik = withFormik<LoginInnerFormProps, FormValues>({
 
 export function LoginForm(props: Props) {
 
-  let history = useHistory();
   let location = useLocation();
 
   const isLoading = false;

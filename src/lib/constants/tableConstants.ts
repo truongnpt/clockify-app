@@ -1,0 +1,32 @@
+export const TableConstants = {
+  LIBRARY: 'library',
+  ADMIN_EMPLOYEES: 'adminEmployees',
+  JOURNEY_EMPLOYEES: 'journeyEmployees',
+  LOCATION: 'location',
+  TEAM: 'team',
+  DEPARTMENT: 'department',
+  GENDER: 'gender',
+  MANAGER: 'manager',
+  AGE: 'age',
+  EMPLOYMENT_PHASE: 'employmentPhase',
+  ACTION_SEQUENCES: 'actionSequences',
+  ACTION_PENDING_REVIEWS: 'actionsPendingReviews',
+  ACTION_STATUSES: 'actionStatuses',
+  SEGMENT_EMPLOYEES: 'segmentEmployees',
+  SUPER_ADMIN_CLIENT: 'client',
+  PLANS: 'plans',
+  DRIVERS: 'drivers',
+  INDUSTRY: 'industry',
+  CLIENT_SUBSCRIPTIONS: 'clientSubscriptions',
+  REPORT_COMMENTS: 'reportComments',
+  SENSITIVE_COMMENTS: 'sensitiveComments',
+  MANAGER_ACCESS: 'managerAccess',
+  EMPLOYEES_ACCESS: 'employeesAccess',
+  INTEGRATIONS: 'integrations',
+  WHISTLE_BLOWING: 'whistleBlowing',
+  EMPLOYEES: 'employees',
+  EMPLOYEE_JOURNEYS: 'employeeJourneys',
+};
+
+export const HEIGHT_ROW = '65px';
+export const HEIGHT_SUB_ROW = '45px';

@@ -6,19 +6,17 @@
 
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import styled from '@emotion/styled';
 import { PublicLayout } from '../../components/PublicLayout';
 import { Flex, Box, H2, P } from '../../components';
 import { LoginForm } from './components/LoginForm';
 
 export function Login(props: any) {
-
   return (
     <>
-      <Helmet>
-        <title>{'Login to U-Work'}</title>
-        <meta name="description" content="Login to U-Work" />
-      </Helmet>
+      <Helmet
+        titleTemplate={'%s - ' + 'Login to U-Work'}
+        defaultTitle={'Login to U-Work'}
+      />
       <PublicLayout>
         <Flex
           minHeight="100%"
@@ -47,4 +45,3 @@ export function Login(props: any) {
     </>
   );
 }
-

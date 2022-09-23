@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DateRangePicker  /> should match snapshot 1`] = `
+<div
+  class="css-1dnhiur"
+>
+  <div
+    class="cursor-pointer form-control css-18dmyh6"
+  >
+    <div
+      class="css-e33e47"
+    />
+    
+    <div
+      class="css-e33e47"
+    />
+    <span
+      class="css-xndqfi"
+    >
+      <svg>
+        chevron-down.svg
+      </svg>
+    </span>
+  </div>
+</div>
+`;

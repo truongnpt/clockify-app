@@ -3,19 +3,23 @@ import { P, Span } from './Common/paragraph';
 import { H1, H2, H3, H4, H5, H6 } from './Common/heading';
 import { Flex, Box, Div } from './Common/container';
 import {
-    IconWrapper,
-    IconCircleWrapper,
-    IconDriverWrapper,
-  } from './IconWrapper';
-  import {
-    FormControl,
-    FormFieldError,
-    FormGroup,
-    FormLabel,
-    FlexFormGroup,
-    FormControlSelect,
-  } from './Form';
-  import { Link, LinkHoverState } from './Link';
+  IconWrapper,
+  IconCircleWrapper,
+  IconDriverWrapper,
+} from './IconWrapper';
+import {
+  FormControl,
+  FormFieldError,
+  FormGroup,
+  FormLabel,
+  FlexFormGroup,
+  FormControlSelect,
+} from './Form';
+import { Link, LinkHoverState } from './Link';
+import { DropDownWrapper } from './DropDown';
+import { NavDropDownWrapper } from './NavDropDown';
+import { Avatar } from './Avatar/avatar';
+import { Table } from './TableContainer';
 
 export {
   Button,
@@ -40,5 +44,9 @@ export {
   FormGroup,
   FormLabel,
   FlexFormGroup,
-  FormControlSelect
+  FormControlSelect,
+  DropDownWrapper,
+  NavDropDownWrapper,
+  Avatar,
+  Table,
 };

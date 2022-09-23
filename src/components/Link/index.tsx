@@ -12,17 +12,15 @@ import {
   compose,
 } from 'styled-system';
 import { Link as RouterLink } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 
 const CustomRouterLink = props => {
   const { to } = props;
   const [link, setLink] = useState(to);
-  const history = useHistory();
-  const currentSearchParam = history?.location?.search;
 
   useEffect(() => {
     setLink(to);
-  }, [to]);
+    console.log(link)
+  }, [to, link]);
 
   return (
     <RouterLink {...props} to={link}>

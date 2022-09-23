@@ -37,9 +37,14 @@ const FormControl = styled(Form.Control)<DisplayProps & any>`
   ${layout};
   ${border};
 
+  &:read-only {
+    background-color: white !important;
+  }
+  
   &:disabled {
-    background-color: ${p => p.theme.colors.northeastSnow};
+    background-color: ${p => p.theme.colors.northeastSnow} !important;
     opacity: 0.8;
+    cursor: not-allowed;
   }
 `;
 

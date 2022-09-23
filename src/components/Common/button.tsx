@@ -23,7 +23,7 @@ export const Button = styled.button<any>(
         color: 'primaryWhite',
         bg: 'primaryGreen',
         '&:hover': {
-          bg: 'primaryBlack',
+          bg: 'primaryGreenHover',
         },
         '&:disabled': {
           opacity: 0.5,
@@ -39,7 +39,7 @@ export const Button = styled.button<any>(
         border: '1px solid',
         borderColor: 'primaryGreen',
         '&:hover': {
-          bg: 'primaryBlack',
+          bg: 'primaryGreenHover',
           color: 'primaryWhite',
         },
         '&:disabled': {

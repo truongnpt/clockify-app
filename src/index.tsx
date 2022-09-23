@@ -1,19 +1,19 @@
 import * as React from 'react';
-// import * as ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ReactDOM from "react-dom/client";
+import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement,
+);
 interface Props {
   Component: typeof App;
 }
-const helmetContext = {};
 
 const ConnectedApp = ({ Component }: Props) => (
-  <HelmetProvider context={helmetContext}>
+  <HelmetProvider>
     <React.StrictMode>
       <Component />
     </React.StrictMode>

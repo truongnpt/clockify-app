@@ -16,6 +16,7 @@ export interface ThemeProps {
   
   export interface ThemeColors {
     primaryGreen: string;
+    primaryGreenHover: string;
     primaryBlack: string;
     primaryWhite: string;
     silver: string;

@@ -28,7 +28,7 @@ export function PublicLayout(props: Props) {
         >
           <Flex className="min-vh-100 pl-5 pt-5" flexDirection="column" pl="xl">
             <Flex alignItems="center">
-              <QualeeIcon
+              <UWorkLogo
                 icon={UWorkWhiteLogo}
                 fill="white"
                 onClick={() => window.open('/', '_blank')}
@@ -58,13 +58,6 @@ export function PublicLayout(props: Props) {
     </PageWrapper>
   );
 }
-
-const LayoutWrapper = styled.div`
-  display: flex;
-  background: #f5f6f8;
-  min-height: 100vh;
-  overflow: hidden;
-`;
 
 const PageWrapper = styled.div<any>`
   @media (min-width: ${theme.screenResolution.ipad}) {
@@ -117,8 +110,6 @@ const PageWrapper = styled.div<any>`
 `;
 
 const LeftBackground = styled(Box)<any>`
-  width: 100%;
-  height: 100%;
   background-image: url(${p => p.imgSrc});
   background-repeat: no-repeat;
   background-size: cover;
@@ -131,7 +122,7 @@ const PublicLayoutWrapper = styled.div<any>`
   background: ${theme.colors.northeastSnow};
 `;
 
-const QualeeIcon = styled(IconWrapper)`
+const UWorkLogo = styled(IconWrapper)`
   width: 60px;
 
   svg {
