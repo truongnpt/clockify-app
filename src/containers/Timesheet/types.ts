@@ -1,7 +1,7 @@
 /* --- STATE --- */
-export interface LoginState {
+export interface TimesheetState {
   logoutSuccess: boolean;
   logoutError?: any;
 }
 
-export type ContainerState = LoginState;
+export type ContainerState = TimesheetState;

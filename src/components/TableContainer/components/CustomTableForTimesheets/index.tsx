@@ -93,7 +93,6 @@ export function CustomTableForTimesheets(props: Props) {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
-                console.log(cell)
                 return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
               })}
             </tr>
@@ -130,10 +129,6 @@ const TableContainer = styled(TableBootstrap)<any>`
       background-color: ${props => props.theme.colors.white} !important;
       border-bottom: 1px solid ${p => p.theme.colors.northeastSnow};
       td {
-        &:first-of-type {
-          width: 40%;
-        }
-
         padding: 8px !important;
         border-top: none;
         border-bottom: none;

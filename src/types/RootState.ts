@@ -1,4 +1,6 @@
 import { LoginState } from 'containers/Login/types';
+import { TimesheetState } from 'containers/Timesheet/types';
+import { AddOrEditTimesheetModalState } from 'containers/Timesheet/components/AddOrEditTimesheetModal/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -8,5 +10,7 @@ import { LoginState } from 'containers/Login/types';
 
 export interface RootState {
   login: LoginState;
+  timesheet: TimesheetState;
+  addOrEditTimesheetModal: AddOrEditTimesheetModalState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

@@ -118,7 +118,7 @@ export const GlobalStyle = () => {
 
         .modal-center {
           &.first-modal-layer {
-            z-index: 1040;
+            z-index: 9999;
           }
           &.fade .modal-dialog {
             transform: translate(-50%, calc(-50% - 50px));

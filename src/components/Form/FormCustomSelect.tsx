@@ -106,6 +106,8 @@ const FormSelect = styled(AsyncSelect)<any>`
       box-shadow: none;
     }
     .react-select__value-container {
+      height: 100%;
+      overflow: auto;
       &:focus {
         outline: none !important;
       }
@@ -207,6 +209,8 @@ const FormNormalStyle = styled(Select)<any>`
       box-shadow: none;
     }
     .react-select__value-container {
+      height: 100%;
+      overflow: auto;
       &:focus {
         outline: none !important;
       }

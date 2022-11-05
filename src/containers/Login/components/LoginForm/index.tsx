@@ -15,7 +15,7 @@ import {
   Button,
 } from 'components';
 import * as Yup from 'yup';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import theme from 'styles/theme';
 
 interface FormValues {
@@ -26,6 +26,7 @@ interface FormValues {
 
 interface LoginInnerFormProps {
   isFormSubmitting: boolean;
+  navigate: any;
 }
 
 interface Props {}
@@ -96,6 +97,7 @@ function LoginInnerForm(props: LoginInnerFormProps & FormikProps<FormValues>) {
 }
 
 const LoginFormFormik = withFormik<LoginInnerFormProps, FormValues>({
+  
   mapPropsToValues: () => ({ email: '', password: '', recaptcha_token: '' }),
   validationSchema: Yup.object().shape({
     email: Yup.string()
@@ -103,27 +105,33 @@ const LoginFormFormik = withFormik<LoginInnerFormProps, FormValues>({
       .required('Please enter your email'),
     password: Yup.string().required('Please enter your password'),
   }),
-  handleSubmit: (values, { props, setSubmitting }) => {
+  handleSubmit: (values, { props, setSubmitting, }) => {
     let payload: any = {
       email: values.email,
       password: values.password,
       rememberMe: true,
       recaptcha_token: 'test',
     };
+    setSubmitting(true);
+    
 
-    setSubmitting(false);
+
+    const from = '/timesheet';
+
+    props.navigate(from);
   },
 })(LoginInnerForm);
 
 export function LoginForm(props: Props) {
 
   let location = useLocation();
+  let navigate = useNavigate();
 
   const isLoading = false;
 
-  let { from } = { from: location.pathname as any } || {
-    from: { pathname: '/' },
-  };
+  const from = '/timesheet';
 
-  return <LoginFormFormik isFormSubmitting={isLoading} />;
+  navigate(from);
+
+  return <LoginFormFormik navigate={navigate} isFormSubmitting={isLoading} />;
 }
