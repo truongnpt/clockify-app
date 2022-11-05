@@ -6,7 +6,7 @@
 
 import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Flex, FormControl, H3, IconWrapper, P } from '../../components';
+import { Flex, FormControl, Box, H3, IconWrapper, P, Button } from '../../components';
 import styled from '@emotion/styled';
 import { DateRangePicker } from '../../components/DateRangePicker';
 import moment from 'moment-timezone';
@@ -14,6 +14,14 @@ import { Delete } from 'components/IconWrapper/Library';
 import { CustomTableForTimesheets } from 'components/TableContainer/components/CustomTableForTimesheets';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { InputDotMenu } from 'components/IconWrapper/Global';
+import { AddOrEditTimesheetModal } from './components/AddOrEditTimesheetModal';
+import { actions, sliceKey, reducer } from './components/AddOrEditTimesheetModal/slice';
+import { addOrEditTimesheetModalSaga } from './components/AddOrEditTimesheetModal/saga';
+import { useDispatch } from 'react-redux';
+import {
+  useInjectReducer,
+  useInjectSaga,
+} from 'utils/redux-injectors';
 
 export const tableInfo = {
   tableName: 'timesheet',
@@ -94,6 +102,14 @@ export const tableInfo = {
 };
 
 export function Timesheet(props: any) {
+  useInjectReducer({
+    key: sliceKey,
+    reducer: reducer,
+  });
+  useInjectSaga({ key: sliceKey, saga: addOrEditTimesheetModalSaga });
+
+  const dispatch = useDispatch();
+
   const [startDate, setStartDate] = useState(
     moment().startOf('week').weekday(1).toDate(),
   );
@@ -107,7 +123,7 @@ export function Timesheet(props: any) {
       project_name: 'Qualee',
       monday_hour: 5,
       tuesday_hour: 4,
-      wednesday_hour: 0,
+      wednesday_hour: '',
       thursday_hour: 6,
       friday_hour: 4,
       saturday_hour: '',
@@ -119,12 +135,24 @@ export function Timesheet(props: any) {
       project_name: 'Transportme',
       monday_hour: 5,
       tuesday_hour: 4,
-      wednesday_hour: 0,
+      wednesday_hour: '',
       thursday_hour: 6,
       friday_hour: 4,
       saturday_hour: '',
       sunday_hour: '',
       total_hour: 40,
+    },
+    {
+      project_id: 0,
+      project_name: 'TOTAL',
+      monday_hour: '10:00',
+      tuesday_hour: '08:00',
+      wednesday_hour: '00:00',
+      thursday_hour: '12:00',
+      friday_hour: '08:00',
+      saturday_hour: '00:00',
+      sunday_hour: '00:00',
+      total_hour: '80:00',
     },
   ];
 
@@ -135,6 +163,56 @@ export function Timesheet(props: any) {
   const data = useMemo(
     () =>
       listTimesheets?.map(item => {
+        if(item.project_id === 0) {
+          return {
+            project: (
+              <P fontWeight="bold" color="primaryGreen" className="mb-0">
+                {item.project_name}
+              </P>
+            ),
+            monday_hour: (
+              <P fontWeight="bold" color="dimGray" className="mb-0">
+                {item.monday_hour}
+              </P>
+            ),
+            tuesday_hour: (
+              <P fontWeight="bold" color="dimGray" className="mb-0">
+                {item.tuesday_hour}
+              </P>
+            ),
+            wednesday_hour: (
+              <P fontWeight="bold" color="dimGray" className="mb-0">
+                {item.wednesday_hour}
+              </P>
+            ),
+            thursday_hour: (
+              <P fontWeight="bold" color="dimGray" className="mb-0">
+                {item.thursday_hour}
+              </P>
+            ),
+            friday_hour: (
+              <P fontWeight="bold" color="dimGray" className="mb-0">
+                {item.friday_hour}
+              </P>
+            ),
+            saturday_hour: (
+              <P fontWeight="bold" color="dimGray" className="mb-0">
+                {item.saturday_hour}
+              </P>
+            ),
+            sunday_hour: (
+              <P fontWeight="bold" color="dimGray" className="mb-0">
+                {item.sunday_hour}
+              </P>
+            ),
+            total_hour: (
+              <P fontWeight="bold" color="dimGray" className="mb-0">
+                {item.total_hour}
+              </P>
+            ),
+            actions: <></>,
+          }
+        }
         return {
           project: (
             <P fontWeight="bold" color="primaryGreen" className="mb-0">
@@ -227,22 +305,38 @@ export function Timesheet(props: any) {
             </InputGroupWrapper>
           ),
           saturday_hour: (
-            <FormControl
-              id="saturday_hour"
-              type="text"
-              color="dimGray"
-              disabled={true}
-              value={item.saturday_hour}
-            />
+            <InputGroupWrapper>
+              <FormControl
+                id="saturday_hour"
+                type="text"
+                color="dimGray"
+                readOnly={true}
+                value={item.saturday_hour}
+              />
+              <InputGroup.Text
+                style={{ height: 40, cursor: 'pointer' }}
+                onClick={() => handleInputHour()}
+              >
+                <IconWrapper icon={InputDotMenu} />
+              </InputGroup.Text>
+            </InputGroupWrapper>
           ),
           sunday_hour: (
-            <FormControl
-              id="sunday_hour"
-              type="text"
-              color="dimGray"
-              disabled={true}
-              value={item.sunday_hour}
-            />
+            <InputGroupWrapper>
+              <FormControl
+                id="sunday_hour"
+                type="text"
+                color="dimGray"
+                readOnly={true}
+                value={item.sunday_hour}
+              />
+              <InputGroup.Text
+                style={{ height: 40, cursor: 'pointer' }}
+                onClick={() => handleInputHour()}
+              >
+                <IconWrapper icon={InputDotMenu} />
+              </InputGroup.Text>
+            </InputGroupWrapper>
           ),
           total_hour: (
             <P fontWeight="bold" color="dimGray" className="mb-0">
@@ -262,7 +356,19 @@ export function Timesheet(props: any) {
         defaultTitle={'Timesheet'}
       />
       <HeaderContentWrapper>
-        <H3 color="dimGray">{'Timesheet'}</H3>
+        <Box>
+          <H3 color="dimGray">{'Timesheet'}</H3>
+          <Button 
+            variant="primary"
+            mt="m"
+            onClick={() => {
+              dispatch(
+                actions.setEventClickButton({showModal: true}),
+              );
+          }}>
+            {'Add New Row'}
+          </Button>
+        </Box>
         <DateRangePickerContainer>
           <DateRangePicker
             onChange={([startDate, endDate]) => {
@@ -282,13 +388,14 @@ export function Timesheet(props: any) {
           data={data}
         />
       </Flex>
+      <AddOrEditTimesheetModal />
     </>
   );
 }
 
 const HeaderContentWrapper = styled(Flex)<any>`
   width: 100%;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
 `;
 

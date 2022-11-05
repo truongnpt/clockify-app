@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CircleLoading  /> should match snapshot 1`] = `
+<div
+  class="css-1a6hei5"
+>
+  <span
+    class="loading css-67azjw"
+  >
+    <svg>
+      loading.svg
+    </svg>
+  </span>
+  
+</div>
+`;

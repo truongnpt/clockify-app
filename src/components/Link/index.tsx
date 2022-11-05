@@ -19,7 +19,6 @@ const CustomRouterLink = props => {
 
   useEffect(() => {
     setLink(to);
-    console.log(link)
   }, [to, link]);
 
   return (
