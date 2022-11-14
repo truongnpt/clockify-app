@@ -109,7 +109,7 @@ export function LeftBarMenu() {
           .map((item, index) => {
             if(item.to === null) {
               return (
-                <MenuItemTitle>{item.title}</MenuItemTitle>
+                <MenuItemTitle key={index}>{item.title}</MenuItemTitle>
               );
             } else {
               return (
