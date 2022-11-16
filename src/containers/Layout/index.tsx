@@ -7,6 +7,8 @@ import { LeftBarMenu } from './components/LeftBarMenu';
 import { Timesheet } from 'containers/Timesheet';
 import { TimeTracker } from 'containers/TimeTracker';
 import { Route, Routes } from 'react-router-dom';
+import { Team } from 'containers/Team';
+import { Projects } from 'containers/Projects';
 declare global {
   interface Window {
     fcWidget: any;
@@ -28,6 +30,20 @@ export function Layout() {
       name: 'time_tracker',
       exact: true,
       element: <TimeTracker />,
+      isAccessible: true,
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      exact: true,
+      element: <Projects />,
+      isAccessible: true,
+    },
+    {
+      path: '/team',
+      name: 'team',
+      exact: true,
+      element: <Team />,
       isAccessible: true,
     },
   ];

@@ -9,6 +9,7 @@ import { GlobalStyle } from './styles/global-styles';
 import theme from './styles/theme';
 import { Login } from './containers/Login';
 import './styles/app.scss';
+import 'react-tabs/style/react-tabs.css';
 import { Layout } from 'containers/Layout';
 
 function App() {

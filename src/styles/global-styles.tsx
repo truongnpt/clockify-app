@@ -39,6 +39,9 @@ export const GlobalStyle = () => {
         select {
           font-family: inherit;
           font-size: inherit;
+          outline: none !important;
+          box-shadow: none !important;
+          border-color: #ced4da !important;
         }
 
         a,

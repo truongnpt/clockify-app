@@ -1,5 +1,5 @@
 import { Flex } from 'components';
-import { Dashboard } from 'components/IconWrapper/LeftBarMenu';
+import { Dashboard, ProjectIcon, ReportIcon, TeamIcon, TimesheetIcon, TimeTrackerIcon } from 'components/IconWrapper/LeftBarMenu';
 import React from 'react';
 import { useLocation } from 'react-router';
 import { MenuItem, MenuItemProps } from './MenuItem';
@@ -13,7 +13,7 @@ export function LeftBarMenu() {
     return {
       title: 'Timesheet',
       to: '/timesheet',
-      Icon: Dashboard,
+      Icon: TimesheetIcon,
       isActive: pathname.split('/')[1] === 'timesheet',
       isAccessible: true,
       children: [],
@@ -24,7 +24,7 @@ export function LeftBarMenu() {
     return {
       title: 'Time Tracker',
       to: '/time-tracker',
-      Icon: Dashboard,
+      Icon: TimeTrackerIcon,
       isActive: pathname.split('/')[1] === 'time-tracker',
       isAccessible: true,
       children: [],
@@ -46,7 +46,7 @@ export function LeftBarMenu() {
     return {
       title: 'Reports',
       to: '/reports',
-      Icon: Dashboard,
+      Icon: ReportIcon,
       isActive: pathname.split('/')[1] === 'reports',
       isAccessible: true,
       children: [],
@@ -57,7 +57,7 @@ export function LeftBarMenu() {
     return {
       title: 'Projects',
       to: '/projects',
-      Icon: Dashboard,
+      Icon: ProjectIcon,
       isActive: pathname.split('/')[1] === 'projects',
       isAccessible: true,
       children: [],
@@ -68,7 +68,7 @@ export function LeftBarMenu() {
     return {
       title: 'Team',
       to: '/team',
-      Icon: Dashboard,
+      Icon: TeamIcon,
       isActive: pathname.split('/')[1] === 'team',
       isAccessible: true,
       children: [],
